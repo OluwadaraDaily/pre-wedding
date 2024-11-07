@@ -1,0 +1,57 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Tailwind CSS build artifacts
+assets/css/output.css
+assets/css/output.css.map
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Static and compiled files
+public/*.cache
+
+# PostCSS and Tailwind files
+postcss.config.js
+tailwind.config.js
+
+# Backup files
+*.bak
+*.orig
+*.old
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# JSON data files (optional, if you want to keep image URLs private)
+data/*.json
+
+# Cache and build folders
+.cache/
+dist/
