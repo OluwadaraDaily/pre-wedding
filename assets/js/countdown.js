@@ -7,9 +7,12 @@ function updateCountdown() {
   const hoursElement = document.getElementById("hours");
   const minutesElement = document.getElementById("minutes");
   const secondsElement = document.getElementById("seconds");
+  const countdownDiv = document.getElementById("countdown-div");
+  const afterCountdownDiv = document.getElementById("after-countdown");
 
   if (timeDifference <= 0) {
-    document.getElementById('countdown').innerText = "The countdown has ended!";
+    countdownDiv.style.display = "none";
+    afterCountdownDiv.style.display = "block";
     return;
   }
 
