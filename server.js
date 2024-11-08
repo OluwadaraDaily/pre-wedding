@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages', 'index.html'));
 });
 
+app.get('/wedding-info', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'wedding-info.html'));
+});
+
 // Catch-all route for undefined routes
 app.get('*', (req, res) => {
   res.status(404).send('Page not found');
