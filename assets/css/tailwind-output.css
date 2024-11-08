@@ -554,12 +554,74 @@ video {
   display: none;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
 .h-\[100vh\] {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.min-h-\[100px\] {
+  min-height: 100px;
+}
+
 .w-full {
   width: 100%;
+}
+
+.min-w-\[\] {
+  min-width: ;
+}
+
+.min-w-\[100px\] {
+  min-width: 100px;
+}
+
+.basis-\[50\%\] {
+  flex-basis: 50%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-primary {
@@ -567,7 +629,44 @@ video {
   background-color: rgb(35 86 115 / var(--tw-bg-opacity));
 }
 
+.text-center {
+  text-align: center;
+}
+
+.font-cursive {
+  font-family: Edu AU VIC WA NT Pre;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.leading-\[1\.5\] {
+  line-height: 1.5;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg\:w-\[\] {
+    width: ;
+  }
+
+  .lg\:w-\[80\%\] {
+    width: 80%;
+  }
 }

@@ -1,0 +1,13 @@
+@import "./tailwind-output.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+
+
+html, body {
+  max-height: 100vh;
+}
+
+body {
+  font-family: "Faculty Glyphic", sans-serif;
+}
