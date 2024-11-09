@@ -51,7 +51,7 @@ function processCSS() {
 // Step 4: Minify and copy JavaScript
 function processJS() {
   console.log('Processing and copying JavaScript...');
-  const inputJS = path.join(SOURCE_DIR, 'assets/js/app.js');
+  const inputJS = path.join(SOURCE_DIR, 'assets/js/main.js');
   const outputJS = path.join(DEST_DIR, 'js/app.min.js');
   ensureDir(path.join(DEST_DIR, 'js'));
   execSync(`npx uglify-js ${inputJS} -o ${outputJS}`);
