@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind-output.css --watch",
     "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind-output.css",
+    "prod-build:css": "npx postcss assets/css/main.css --config ./postcss.config.js | npx cleancss -o public/css/output.min.css",
     "dev": "node server.js",
-    "build": "node build/build.js"
+    "build": "npm run prod-build:css && node build/build.js"
   },
   "keywords": [],
   "author": "",

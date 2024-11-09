@@ -1,0 +1,11 @@
+[build]
+  command = "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-output.css && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18.17.0"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
