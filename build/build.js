@@ -41,10 +41,12 @@ function copyHTML() {
 // Step 3: Process and copy CSS
 function processCSS() {
   console.log('Processing and copying CSS...');
+  execSync(`npm run build:css`);
+
   const inputCSS = path.join(SOURCE_DIR, 'assets/css/main.css');
   const outputCSS = path.join(DEST_DIR, 'css/output.min.css');
   ensureDir(path.join(DEST_DIR, 'css'));
-  execSync(`npx postcss ${inputCSS} --use autoprefixer | npx cleancss -o ${outputCSS}`);
+  execSync(`npx postcss ${inputCSS} --config ./postcss.config.js | npx cleancss -o ${outputCSS}`);
   console.log('CSS processed and copied.');
 }
 

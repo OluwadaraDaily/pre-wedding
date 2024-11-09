@@ -55,3 +55,7 @@ data/*.json
 # Cache and build folders
 .cache/
 dist/
+
+
+# Build folder
+public/
