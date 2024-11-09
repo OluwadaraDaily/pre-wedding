@@ -4,9 +4,7 @@ const { execSync } = require('child_process');
 
 // Directories
 const SOURCE_DIR = path.resolve(__dirname, '../');
-console.log('SOURCE_DIR =>', SOURCE_DIR);
 const DEST_DIR = path.resolve(__dirname, '../public');
-console.log('DEST_DIR =>', DEST_DIR);
 
 // Helper to ensure a directory exists
 function ensureDir(dir) {
@@ -43,8 +41,20 @@ function processCSS() {
   console.log('Processing and copying CSS...');
   execSync(`npm run build:css`);
 
+  const tailwindCSSPath = path.join(SOURCE_DIR, "assets/css/tailwind-output.css");
+  console.log('Merging Tailwind CSS into main.css...');
+  if (!fs.existsSync(tailwindCSSPath)) {
+    throw new Error(`File not found: ${tailwindCSSPath}`);
+  }
+
   const inputCSS = path.join(SOURCE_DIR, 'assets/css/main.css');
   const outputCSS = path.join(DEST_DIR, 'css/output.min.css');
+
+   // Append tailwind-output.css content to main.css
+  const tailwindContent = fs.readFileSync(tailwindCSSPath, 'utf8');
+  fs.appendFileSync(inputCSS, `\n/* Tailwind CSS */\n${tailwindContent}`);
+
+
   ensureDir(path.join(DEST_DIR, 'css'));
   execSync(`npx postcss ${inputCSS} --config ./postcss.config.js | npx cleancss -o ${outputCSS}`);
   console.log('CSS processed and copied.');
@@ -53,7 +63,7 @@ function processCSS() {
 // Step 4: Minify and copy JavaScript
 function processJS() {
   console.log('Processing and copying JavaScript...');
-  const inputJS = path.join(SOURCE_DIR, 'assets/js/main.js');
+  const inputJS = path.join(SOURCE_DIR, 'assets/js/countdown.js');
   const outputJS = path.join(DEST_DIR, 'js/app.min.js');
   ensureDir(path.join(DEST_DIR, 'js'));
   execSync(`npx uglify-js ${inputJS} -o ${outputJS}`);
