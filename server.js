@@ -19,7 +19,7 @@ app.get('/wedding-info', (req, res) => {
 
 // Catch-all route for undefined routes
 app.get('*', (req, res) => {
-  res.status(404).send('Page not found');
+  res.sendFile(path.join(__dirname, 'pages', 'index.html'));
 });
 
 // Start the server
