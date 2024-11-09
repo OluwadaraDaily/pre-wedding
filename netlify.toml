@@ -1,5 +1,5 @@
 [build]
-  command = "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind-output.css && npm run build"
+  command = "npm run build"
   publish = "public"
 
 [build.environment]
