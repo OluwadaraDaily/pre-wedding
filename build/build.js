@@ -57,7 +57,7 @@ function processCSS() {
 
   ensureDir(path.join(DEST_DIR, 'css'));
   execSync(`npx postcss ${inputCSS} --config ./postcss.config.js | npx cleancss -o ${outputCSS}`);
-  const outputFileContent = fs.readSync(outputCSS, "utf-8");
+  const outputFileContent = fs.readFileSync(outputCSS, "utf-8");
   console.log("outputFileContent =>", outputFileContent);
   console.log('CSS processed and copied.');
 }
