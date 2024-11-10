@@ -39,7 +39,6 @@ function copyHTML() {
 // Step 3: Process and copy CSS
 function processCSS() {
   console.log('Processing and copying CSS...');
-  execSync(`npm run build:css`);
 
   const tailwindCSSPath = path.join(SOURCE_DIR, "assets/css/tailwind-output.css");
   console.log('Merging Tailwind CSS into main.css...');
@@ -52,11 +51,14 @@ function processCSS() {
 
    // Append tailwind-output.css content to main.css
   const tailwindContent = fs.readFileSync(tailwindCSSPath, 'utf8');
+  console.log('TAILWIND CONTENT =>', tailwindContent);
   fs.appendFileSync(inputCSS, `\n/* Tailwind CSS */\n${tailwindContent}`);
 
 
   ensureDir(path.join(DEST_DIR, 'css'));
   execSync(`npx postcss ${inputCSS} --config ./postcss.config.js | npx cleancss -o ${outputCSS}`);
+  const outputFileContent = fs.readSync(outputCSS, "utf-8");
+  console.log("outputFileContent =>", outputFileContent);
   console.log('CSS processed and copied.');
 }
 
