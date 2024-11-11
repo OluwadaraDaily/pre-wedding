@@ -8,7 +8,7 @@
     "watch:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind-output.css --watch",
     "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind-output.css",
     "prod-build:css": "npx postcss assets/css/main.css --config ./postcss.config.js --verbose | npx cleancss -o public/css/output.min.css",
-    "build": "npm run build:css && ls ./assets/css && npm run prod-build:css && node build/build.js",
+    "build": "npm run build:css && npm run prod-build:css && node build/build.js",
     "dev": "node server.js"
   },
   "keywords": [],
