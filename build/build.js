@@ -51,14 +51,12 @@ function processCSS() {
 
    // Append tailwind-output.css content to main.css
   const tailwindContent = fs.readFileSync(tailwindCSSPath, 'utf8');
-  console.log('TAILWIND CONTENT =>', tailwindContent);
   fs.appendFileSync(inputCSS, `\n/* Tailwind CSS */\n${tailwindContent}`);
 
 
   ensureDir(path.join(DEST_DIR, 'css'));
   execSync(`npx postcss ${inputCSS} --config ./postcss.config.js | npx cleancss -o ${outputCSS}`);
   const outputFileContent = fs.readFileSync(outputCSS, "utf-8");
-  console.log("outputFileContent =>", outputFileContent);
   console.log('CSS processed and copied.');
 }
 
