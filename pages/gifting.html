@@ -38,14 +38,20 @@
       </div>
       <div class="flex flex-col items-center justify-center">
         <h3 class="text-3xl mb-8">Account Details</h3>
-        <div class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8">
+        <div 
+          class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8 hover:cursor-pointer"
+          onclick="copyAccountNumberToClipboard('0066102231')"
+        >
           <p class="">
             Union Bank<br/>
             0066102231 <br/>
             Oluwadara Ayomide Oloye
           </p>
         </div>
-        <div class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8">
+        <div 
+          class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8 hover:cursor-pointer"
+          onclick="copyAccountNumberToClipboard('1458305860')"
+        >
           <p class="">
             Access Bank<br/>
             1458305860 <br/>
@@ -55,5 +61,6 @@
       </div>
     </section>
   </main>
+  <script src="/assets/js/gifting.js"></script>
 </body>
 </html>
