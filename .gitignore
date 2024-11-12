@@ -37,7 +37,6 @@ public/*.cache
 
 # PostCSS and Tailwind files
 postcss.config.js
-tailwind.config.js
 
 # Backup files
 *.bak
