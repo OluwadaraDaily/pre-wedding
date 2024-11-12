@@ -9,3 +9,15 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  # Serve wedding-info.html on /wedding-info route
+  from = "/wedding-info"
+  to = "/wedding-info.html"
+  status = 200
+
+[[redirects]]
+  # Serve gifting.html on /gifting route
+  from = "/gifting"
+  to = "/gifting.html"
+  status = 200

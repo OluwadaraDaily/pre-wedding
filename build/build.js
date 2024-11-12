@@ -32,7 +32,12 @@ function cleanPublicFolder() {
 function copyHTML() {
   console.log('Copying HTML files...');
   ensureDir(DEST_DIR);
-  copyFile(path.join(SOURCE_DIR, 'pages/index.html'), path.join(DEST_DIR, 'index.html'));
+  const htmlFiles = [
+    "index", "wedding-info", "gifting"
+  ]
+  for (const file of htmlFiles) {
+    copyFile(path.join(SOURCE_DIR, `pages/${file}.html`), path.join(DEST_DIR, `${file}.html`));
+  }
   console.log('HTML files copied.');
 }
 
