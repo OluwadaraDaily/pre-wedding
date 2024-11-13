@@ -6,6 +6,33 @@
   <title>Dara and Steph's Wedding Information</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="./css/output.min.css">
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+  </style>
 </head>
 <body class="h-full w-full bg-primary text-white">
   <header class="mb-8 w-full py-4 flex justify-center">
@@ -30,7 +57,7 @@
         <p>
           As we begin our journey together, your love and support are the greatest gifts of all. For those who’d like to celebrate our wedding with a gift, we’ve made it easy to find something meaningful! Check out our <a href="https://www.thingstogetme.com/1360457a6f9fe" class="underline" target="_blank">Things You Can Get Us list</a>—filled with items we’d truly love and could use as we start our new life together. <br/> <br/> <br/>
 
-          If nothing on the list catches your eye, or if you’d prefer a simpler option, a <span class="underline">monetary gift</span> would be deeply appreciated. It’ll help us plan for the future and create lasting memories in this exciting new chapter.
+          If nothing on the list catches your eye, or if you’d prefer a simpler option, a <span class="underline hover:cursor-help tooltip">monetary gift <span class="tooltiptext">Account details are below</span></span> would be deeply appreciated. It’ll help us plan for the future and create lasting memories in this exciting new chapter.
           <br/> <br/> <br/>
 
           Thank you for sharing in our special day. Your thoughtfulness and generosity mean everything to us! 💍✨
