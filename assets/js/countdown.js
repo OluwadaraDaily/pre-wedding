@@ -1,7 +1,7 @@
 const targetDate = new Date('January 11, 2025 09:00:00').getTime();
 let menuOpen = false;
 
-function updateCountdown() {
+window.updateCountdown = () => {
   const now = new Date().getTime();
   const timeDifference = targetDate - now; // Time remaining in milliseconds
   const daysElement = document.getElementById("days");
@@ -36,7 +36,7 @@ setInterval(updateCountdown, 1000);
 // Initialize countdown
 updateCountdown();
 
-toggleMenu = () => {
+window.toggleMenu = () => {
   const menuDiv = document.getElementById("nav-items");
   if (menuOpen) {
     menuDiv.style.display = "none";
