@@ -8,14 +8,8 @@
   <link rel="stylesheet" href="./css/output.min.css">
 </head>
 <body class="h-full w-full bg-primary text-white">
-  <header class="relative mb-8 w-full py-4 flex flex-col lg:flex-row items-center lg:justify-center">
-    <div class="lg:hidden hover:cursor-pointer" onclick="toggleMenu()">
-      <img
-        src="/assets/icons/hamburger.svg"
-        width="20"
-      />
-    </div>
-    <nav id="nav-items" class="top-0 w-full lg:w-auto lg:relative lg:flex flex-row items-center justify-center list-none gap-4">
+  <header class="relative mb-8 w-full py-4 flex flex-row items-center justify-center">
+    <nav class="top-0 w-auto relative flex flex-row items-center justify-center list-none gap-4">
       <li>
         <a href="/" class="underline decoration-white">Home</a>
       </li>
@@ -35,17 +29,15 @@
       <div class="mb-8">
         <h2 class="text-4xl font-cursive leading-[1.5]">Becoming the OLOYEs</h2>
       </div> 
-      <div class="flex lg:flex-row lg:gap-0 items-center justify-center flex-col gap-8 mb-8">
-        <div class="flex flex-col lg:flex-row gap-4 justify-center">
-          <div class="h-[300px] w-[300px] border border-white rounded-[100px] overflow-hidden">
-            <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1732645490/wedding-page/_MG_0003-Edit_lwt9os.jpg" alt="Dara and Steph in love...">
-          </div>
-          <div class="h-[300px] w-[300px] border border-white rounded-[100px] overflow-hidden">
-            <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1731018352/wedding-page/PXL_20240225_173249138.PORTRAIT_i2nnxl.jpg" alt="Dara and Steph in love...">
-          </div>
-          <div class="h-[300px] w-[300px] border border-white rounded-[100px] overflow-hidden">
-            <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1731018361/wedding-page/PXL_20231118_141208668.MP_wdvuxg.jpg" alt="Dara and Steph in love...">
-          </div>
+      <div class="flex lg:flex-row gap-0 items-center justify-center flex-col mb-8 overflow-auto">
+        <div class="lg:min-h-[300px] lg:w-[500px] lg:border lg:border-white lg:rounded-[100px] lg:overflow-hidden">
+          <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1732645490/wedding-page/_MG_0003-Edit_lwt9os.jpg" alt="Dara and Steph in love...">
+        </div>
+        <div class="lg:min-h-[300px] lg:w-[500px] lg:border lg:border-white lg:rounded-[100px] lg:overflow-hidden">
+          <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1731018352/wedding-page/PXL_20240225_173249138.PORTRAIT_i2nnxl.jpg" alt="Dara and Steph in love...">
+        </div>
+        <div class="lg:min-h-[300px] lg:w-[500px] lg:border lg:border-white lg:rounded-[100px] lg:overflow-hidden">
+          <img class="overflow-hidden" src="https://res.cloudinary.com/oluwadaradaily/image/upload/v1731018361/wedding-page/PXL_20231118_141208668.MP_wdvuxg.jpg" alt="Dara and Steph in love...">
         </div>
       </div>   
       <div id="countdown-div">

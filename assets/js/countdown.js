@@ -1,7 +1,7 @@
 const targetDate = new Date('January 11, 2025 09:00:00').getTime();
 let menuOpen = false;
 
-window.updateCountdown = () => {
+updateCountdown = () => {
   const now = new Date().getTime();
   const timeDifference = targetDate - now; // Time remaining in milliseconds
   const daysElement = document.getElementById("days");
@@ -45,3 +45,44 @@ window.toggleMenu = () => {
   }
   menuOpen = !menuOpen;
 }
+
+window.copyAccountNumberToClipboard = (accountNumber) => {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(accountNumber)
+      .then(() => {
+        alert("Account Number copied!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy account number:", err);
+        alert("Failed to copy account number. Please try again.");
+      });
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = accountNumber;
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      alert("Account Number copied!");
+    } catch (err) {
+      console.error("Fallback copy failed:", err);
+      alert("Failed to copy account number. Please try again.");
+    }
+    document.body.removeChild(textarea);
+  }
+};
+
+document.getElementById("union-bank").addEventListener("click", () => {
+  copyAccountNumberToClipboard('0066102231');
+});
+
+document.getElementById("access-bank").addEventListener("click", () => {
+  copyAccountNumberToClipboard('1458305860');
+});
+
+document.getElementById("hamburger-menu").addEventListener("click", () => {
+  console.log('HERE!!!!!')
+  toggleMenu();
+});

@@ -36,7 +36,7 @@
 </head>
 <body class="h-full w-full bg-primary text-white">
   <header class="relative mb-8 w-full py-4 flex flex-col lg:flex-row items-center lg:justify-center">
-    <div class="lg:hidden hover:cursor-pointer" onclick="toggleMenu()">
+    <div id="hamburger-menu" class="lg:hidden hover:cursor-pointer">
       <img
         src="/assets/icons/hamburger.svg"
         width="20"
@@ -72,8 +72,8 @@
       <div class="flex flex-col items-center justify-center">
         <h3 class="text-3xl mb-8">Account Details</h3>
         <div 
+          id="union-bank"
           class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8 hover:cursor-pointer"
-          onclick="copyAccountNumberToClipboard('0066102231')"
         >
           <p class="">
             Union Bank<br/>
@@ -82,8 +82,8 @@
           </p>
         </div>
         <div 
+          id="access-bank"
           class="max-w-max py-4 px-8 rounded-lg shadow-lg mb-8 hover:cursor-pointer"
-          onclick="copyAccountNumberToClipboard('1458305860')"
         >
           <p class="">
             Access Bank<br/>
@@ -94,7 +94,6 @@
       </div>
     </section>
   </main>
-  <script src="../assets/js/gifting.js"></script>
   <script src="../assets/js/countdown.js"></script>
   <script src="./js/app.min.js"></script>
 </body>
