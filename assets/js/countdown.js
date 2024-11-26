@@ -1,4 +1,5 @@
 const targetDate = new Date('January 11, 2025 09:00:00').getTime();
+let menuOpen = false;
 
 function updateCountdown() {
   const now = new Date().getTime();
@@ -34,3 +35,13 @@ setInterval(updateCountdown, 1000);
 
 // Initialize countdown
 updateCountdown();
+
+toggleMenu = () => {
+  const menuDiv = document.getElementById("nav-items");
+  if (menuOpen) {
+    menuDiv.style.display = "none";
+  } else {
+    menuDiv.style.display = "flex"
+  }
+  menuOpen = !menuOpen;
+}
