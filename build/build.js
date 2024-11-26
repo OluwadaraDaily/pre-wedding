@@ -68,10 +68,33 @@ function processCSS() {
 // Step 4: Minify and copy JavaScript
 function processJS() {
   console.log('Processing and copying JavaScript...');
-  const inputJS = path.join(SOURCE_DIR, 'assets/js/countdown.js');
+  
+  const inputDir = path.join(SOURCE_DIR, 'assets/js');
+  const combinedFile = path.join(SOURCE_DIR, 'assets/js/combined.js');
   const outputJS = path.join(DEST_DIR, 'js/app.min.js');
+  
+  // Ensure the destination directory exists
   ensureDir(path.join(DEST_DIR, 'js'));
-  execSync(`npx uglify-js ${inputJS} -o ${outputJS}`);
+
+  // Combine all JS files into "combined.js"
+  const files = fs.readdirSync(inputDir).filter(file => file.endsWith('.js'));
+  
+  if (files.length === 0) {
+    console.error('No JavaScript files found to process.');
+    return;
+  }
+  
+  const combinedContent = files.map(file => {
+    const filePath = path.join(inputDir, file);
+    return fs.readFileSync(filePath, 'utf-8');
+  }).join('\n');
+
+  // Write combined content to "combined.js"
+  fs.writeFileSync(combinedFile, combinedContent);
+  console.log(`Combined JS files into: ${combinedFile}`);
+
+  // Minify the combined JS file
+  execSync(`npx uglify-js ${combinedFile} -o ${outputJS}`);
   console.log('JavaScript processed and copied.');
 }
 
